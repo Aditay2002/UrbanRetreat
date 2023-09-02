@@ -16,7 +16,7 @@ import BookingsPage from "./pages/BookingsPage";
 import BookingPage from "./pages/BookingPage";
 
 
-axios.defaults.baseURL='https://urban-retreat.vercel.app/';
+axios.defaults.baseURL='https://urban-retreat-uf6q.vercel.app/';
 axios.defaults.withCredentials=true;
 
 function App() {
