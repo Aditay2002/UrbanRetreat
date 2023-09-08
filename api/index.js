@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use('/uploads',express.static(__dirname+'/uploads'))
 app.use(cors({
   credentials: true,
-  origin: 'http://localhost:3001',
+  origin: 'https://urban-retreat-uf6q.vercel.app/',
 }));
 
 mongoose.connect(process.env.MONGOOSE_URL);
