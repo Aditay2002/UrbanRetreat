@@ -8,22 +8,24 @@ export default function LoginPage() {
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
     const { setUser } = useContext(UserContext);
-  async function handleLoginSubmit(ev) {
+ async function handleLoginSubmit(ev) {
     ev.preventDefault();
     try {
       const response = await axios.post('/login', { email, password });
       const user = response.data; // Get the user data from the response
-      console.log(response)
+      if (user === "not found" || user === "pass not ok") {
+        alert("Please provide valid Email & Password");
+      }
+     else{
       alert('Login successful');
-    
       setRedirect(true);
       setUser(user);
+     }
        // Set the user data
     } catch (e) {
       alert('Login failed');
     }
   }
-
   if (redirect) {
     return <Navigate to={'/'} />
   }
